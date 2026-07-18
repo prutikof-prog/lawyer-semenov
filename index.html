@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Юрист Павел Семенов — Челябинск | Уголовные и гражданские дела, споры с госорганами</title>
+<meta name="description" content="Павел Семенов — юрист, 22 года в прокуратуре Челябинской области, 10+ лет заместителем прокурора. Консультации по уголовным делам, представительство потерпевших, жалобы на госорганы, гражданские дела. Челябинск.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#33332F;
+    --bg-soft:#3B3B36;
+    --bg-card:#3E3E38;
+    --brass-light:#D8C79A;
+    --brass:#C4A972;
+    --brass-deep:#A9895E;
+    --text:#EDEAE2;
+    --text-soft:#BDB9AE;
+    --line:rgba(216,199,154,.18);
+    --serif:'Lora',Georgia,serif;
+    --sans:'Inter',-apple-system,'Segoe UI',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* Тонкая латунная линия вверху страницы */
+  .top-accent{
+    height:3px;
+    background:linear-gradient(90deg,var(--brass-deep),var(--brass-light) 40%,var(--brass-deep) 90%);
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.25}
+  h2{font-size:clamp(26px,3.4vw,36px);margin-bottom:18px}
+  h2::after{
+    content:"";display:block;width:64px;height:2px;margin-top:14px;
+    background:linear-gradient(90deg,var(--brass-light),var(--brass-deep));
+  }
+  section{padding:72px 0}
+  a{color:var(--brass-light);text-decoration:none}
+  a:hover{color:var(--brass)}
+
+  /* ===== Навигация ===== */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(51,51,47,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--serif);font-size:19px;color:var(--text);letter-spacing:.02em}
+  .logo span{color:var(--brass-light)}
+  nav ul{display:flex;gap:32px;list-style:none}
+  nav a{color:var(--text-soft);font-size:15px;font-weight:400;transition:color .2s}
+  nav a:hover{color:var(--brass-light)}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{display:block;width:22px;height:2px;background:var(--brass-light);margin:5px 0;transition:.3s}
+
+  /* ===== Hero ===== */
+  .hero{padding:84px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .85fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(28px,3.8vw,42px);margin-bottom:22px}
+  .hero h1 em{font-style:normal;color:var(--brass-light)}
+  .hero .sub{font-size:17px;color:var(--text-soft);max-width:560px;margin-bottom:34px}
+  .btn{
+    display:inline-block;
+    font-family:var(--sans);font-weight:500;font-size:16px;
+    color:#2B2B27;
+    background:linear-gradient(135deg,var(--brass-light),var(--brass-deep));
+    padding:15px 34px;border-radius:6px;border:none;cursor:pointer;
+    box-shadow:0 4px 18px rgba(169,137,94,.25);
+    transition:transform .15s,box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(169,137,94,.35);color:#2B2B27}
+
+  /* Фото: светлая подложка + рамка/тень, чтобы не сливалось с графитом */
+  .photo-frame{
+    position:relative;
+    background:#F2F0EA;
+    padding:10px;border-radius:8px;
+    box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 0 1px rgba(216,199,154,.25);
+    max-width:380px;margin:0 auto;
+  }
+  .photo-frame img{display:block;width:100%;border-radius:4px}
+  .photo-ph{
+    aspect-ratio:3/4;border-radius:4px;
+    background:linear-gradient(160deg,#E9E6DE,#D8D5CC);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:#8A8578;font-size:14px;text-align:center;gap:10px;padding:20px;
+  }
+  .photo-ph svg{opacity:.5}
+
+  /* ===== Цифры ===== */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;background:var(--bg-soft)}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat b{
+    display:block;font-family:var(--serif);font-weight:700;
+    font-size:clamp(30px,4vw,44px);
+    background:linear-gradient(135deg,var(--brass-light),var(--brass-deep));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:6px;
+  }
+  .stat span{color:var(--text-soft);font-size:15px}
+
+  /* ===== Обо мне ===== */
+  .about-grid{display:grid;grid-template-columns:1fr;gap:0}
+  .about p{margin-bottom:18px;max-width:820px;color:var(--text)}
+  .about p.muted{color:var(--text-soft)}
+  .useful{margin:28px 0 8px}
+  .useful h3{font-size:21px;margin-bottom:16px;color:var(--brass-light)}
+  .useful-item{
+    border-left:2px solid var(--brass-deep);
+    padding:4px 0 4px 20px;margin-bottom:18px;max-width:820px;
+  }
+  .useful-item b{font-weight:500;color:var(--text)}
+  .useful-item p{color:var(--text-soft);margin:4px 0 0}
+  .about-photos{display:flex;gap:24px;flex-wrap:wrap;margin-top:40px}
+  .about-photos .photo-frame{max-width:260px;margin:0}
+  .about-photos .photo-ph{aspect-ratio:4/3;font-size:13px}
+
+  /* ===== Услуги ===== */
+  .services{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:36px}
+  .card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:8px;padding:30px 28px;
+    transition:border-color .2s,transform .15s;
+  }
+  .card:hover{border-color:rgba(216,199,154,.45);transform:translateY(-3px)}
+  .card h3{font-size:20px;margin-bottom:12px}
+  .card h3::before{
+    content:"";display:block;width:34px;height:2px;margin-bottom:14px;
+    background:linear-gradient(90deg,var(--brass-light),var(--brass-deep));
+  }
+  .card p{color:var(--text-soft);font-size:15px}
+
+  /* ===== Цены ===== */
+  .price-list{margin-top:36px;max-width:860px}
+  .price-row{
+    display:flex;align-items:baseline;gap:18px;
+    padding:20px 4px;border-bottom:1px solid var(--line);
+  }
+  .price-row .amount{
+    font-family:var(--serif);font-weight:600;font-size:21px;
+    color:var(--brass-light);white-space:nowrap;min-width:150px;
+  }
+  .price-row .desc{color:var(--text);font-size:16px}
+  .price-note{
+    margin-top:30px;max-width:860px;
+    background:var(--bg-soft);border:1px solid var(--line);
+    border-left:3px solid var(--brass-deep);
+    border-radius:6px;padding:22px 26px;
+    color:var(--text-soft);font-size:15px;
+  }
+
+  /* ===== Почему обращаются ===== */
+  .why{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .why ul{list-style:none;margin-top:32px;max-width:820px}
+  .why li{
+    position:relative;padding:0 0 0 34px;margin-bottom:20px;
+    font-size:16.5px;color:var(--text);
+  }
+  .why li::before{
+    content:"—";position:absolute;left:0;top:0;
+    color:var(--brass-light);font-weight:600;
+  }
+
+  /* ===== Контакты ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px}
+  .contact-item{margin-bottom:22px}
+  .contact-item .label{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-soft);margin-bottom:4px}
+  .contact-item .value,.contact-item a{font-size:18px;color:var(--text);font-weight:400}
+  .contact-item a:hover{color:var(--brass-light)}
+  form{display:flex;flex-direction:column;gap:16px}
+  input,textarea{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:6px;
+    padding:14px 16px;color:var(--text);font-family:var(--sans);font-size:15px;
+    transition:border-color .2s;width:100%;
+  }
+  input:focus,textarea:focus{outline:none;border-color:var(--brass)}
+  textarea{min-height:110px;resize:vertical}
+  ::placeholder{color:#8B887D}
+  .map-box{
+    margin-top:56px;border-radius:8px;overflow:hidden;
+    border:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.35);
+  }
+  .map-box iframe{display:block;width:100%;height:380px;border:0;filter:grayscale(.25) contrast(.95)}
+
+  footer{border-top:1px solid var(--line);padding:32px 0;color:var(--text-soft);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+  .footer-links a{color:var(--brass-deep)}
+  .footer-links a:hover{color:var(--brass-light)}
+  .footer-links span{color:var(--text-soft);margin:0 6px}
+
+  /* ===== Адаптив ===== */
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .hero{padding:56px 0 48px;text-align:left}
+    .photo-frame{max-width:300px}
+    .cards{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:32px 16px}
+    nav ul{
+      display:none;position:absolute;top:64px;left:0;right:0;
+      flex-direction:column;gap:0;
+      background:var(--bg-soft);border-bottom:1px solid var(--line);
+    }
+    nav ul.open{display:flex}
+    nav ul li{border-top:1px solid var(--line)}
+    nav ul a{display:block;padding:16px 24px}
+    .burger{display:block}
+  }
+</style>
+</head>
+<body>
+
+<div class="top-accent"></div>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">Юрист — Павел <span>Семенов</span></div>
+    <nav>
+      <button class="burger" aria-label="Меню" onclick="document.getElementById('menu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="menu">
+        <li><a href="#about" onclick="closeMenu()">Обо мне</a></li>
+        <li><a href="#services" onclick="closeMenu()">Услуги</a></li>
+        <li><a href="#prices" onclick="closeMenu()">Цены</a></li>
+        <li><a href="#contacts" onclick="closeMenu()">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Главный экран ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Когда государство говорит с&nbsp;вами на&nbsp;непонятном языке&nbsp;— нужен тот, кто <em>объяснит и&nbsp;защитит</em></h1>
+      <p class="sub">22 года в прокуратуре Челябинской области. Теперь на вашей стороне: <strong style="font-weight:600;color:var(--text)">перевожу с юридического на человеческий</strong>, беру дело на себя и довожу до результата.</p>
+      <a class="btn" href="#contacts">Получить консультацию</a>
+    </div>
+    <div>
+      <div class="photo-frame">
+        <!-- ФОТО: положите файл photo-main.jpg рядом с index.html — он подставится автоматически -->
+        <img src="photo-main.jpg" alt="Юрист Павел Семенов" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-ph" style="display:none">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          Фото Павла Семенова<br>(файл photo-main.jpg)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Цифры ===== -->
+<section class="stats" style="padding:44px 0">
+  <div class="wrap stats-grid">
+    <div class="stat"><b>22</b><span>года практики</span></div>
+    <div class="stat"><b>2000+</b><span>дел с решением</span></div>
+    <div class="stat"><b>10+</b><span>лет зам. прокурора</span></div>
+    <div class="stat"><b>100+</b><span>дел в год</span></div>
+  </div>
+</section>
+
+<!-- ===== Обо мне ===== -->
+<section id="about" class="about">
+  <div class="wrap">
+    <h2>Обо мне</h2>
+    <p>Меня зовут Павел Семенов. С 2003 по 2025 год я работал в органах прокуратуры Челябинской области, последние десять с лишним лет — заместителем прокурора города Коркино. За 22 года через меня прошло более 2000 дел, дошедших до итогового решения суда. Судебные процессы были моей повседневной работой.</p>
+    <p>Как заместитель прокурора я надзирал за правоохранительными органами: изучал уголовные дела на предмет недоработок перед тем, как они уходили в суд. Поэтому я хорошо представляю, как устроено обвинение и где в нём обычно бывают слабые места. Этот опыт даёт мне цельное понимание правоохранительной и судебной системы изнутри.</p>
+    <p>Отдельное моё преимущество — двадцать два года работы внутри государственной машины. Знаю бюрократические процедуры и умею добиваться реального результата там, где обычному человеку дают формальные отписки.</p>
+
+    <div class="useful">
+      <h3>Чем могу быть полезен</h3>
+      <div class="useful-item">
+        <b>Потерпевшим по уголовным делам</b>
+        <p>Помогу, чтобы ваши требования были полноценно включены в дело: заявление, гражданский иск, участие в процессе.</p>
+      </div>
+      <div class="useful-item">
+        <b>Обвиняемым и их близким</b>
+        <p>Дам независимую оценку дела. Я не участвую в процессе и ни с кем не связан, поэтому могу спокойно разобрать материалы и честно сказать: насколько сильна позиция обвинения, за что имеет смысл платить адвокату, а за что — нет.</p>
+      </div>
+      <div class="useful-item">
+        <b>По спорам с госорганами</b>
+        <p>Помогу составить обращение или жалобу и обжаловать незаконное решение.</p>
+      </div>
+      <div class="useful-item">
+        <b>Гражданские дела</b>
+        <p>Веду в паре с юристом Артёмом Архангельским. Мы оба из прокуратуры, но он уже несколько лет специализируется на гражданской сфере: защита прав потребителей, авторские права, договорные споры. Такой тандем даёт то, что редко встречается вместе: прокурорскую дотошность в анализе фактов и практический опыт гражданских дел рядом. Именно на эти дела я делаю ставку сейчас, активно развиваясь в этом направлении.</p>
+      </div>
+    </div>
+
+    <p class="muted">Ещё один момент о том, как я работаю: я объясняю всё подробно, по полочкам, пока не станет понятно до конца. Это касается и общения с оппонентами — спокойное, обстоятельное изложение своей позиции почти всегда работает лучше, чем конфликт. Но если ситуация требует твёрдости — я последователен и настойчив.</p>
+
+    <!-- Доп. места под фото: положите photo-2.jpg / photo-3.jpg рядом с index.html -->
+    <div class="about-photos">
+      <div class="photo-frame">
+        <img src="photo-2.jpg" alt="Юрист Павел Семенов" onerror="this.closest('.photo-frame').style.display='none'">
+      </div>
+      <!-- Доп. место: появится автоматически, когда рядом положат файл photo-3.jpg -->
+      <div class="photo-frame">
+        <img src="photo-3.jpg" alt="Юрист Павел Семенов" onerror="this.closest('.photo-frame').style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Услуги ===== -->
+<section id="services" class="services">
+  <div class="wrap">
+    <h2>Услуги</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Консультация по уголовному делу</h3>
+        <p>Разберу вашу ситуацию и объясню, что происходит и чего ждать дальше — без юридического тумана. Вы уйдёте с ясным пониманием своих вариантов и следующего шага.</p>
+      </div>
+      <div class="card">
+        <h3>Представительство потерпевшего</h3>
+        <p>Сопровождаю потерпевших на следствии и в суде: заявление, гражданский иск, участие в процессе. Слежу, чтобы ваши интересы не потерялись за интересами обвинения.</p>
+      </div>
+      <div class="card">
+        <h3>Жалобы и обращения в госорганы</h3>
+        <p>Составляю обращения и жалобы так, чтобы на них нельзя было ответить формальной отпиской. Обжалую незаконные решения и бездействие должностных лиц.</p>
+      </div>
+      <div class="card">
+        <h3>Гражданские дела</h3>
+        <p>Защита прав потребителей, договорные споры, авторские права — в тандеме с юристом Артёмом Архангельским. Прокурорская дотошность в анализе фактов плюс практический опыт гражданской сферы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Цены ===== -->
+<section id="prices">
+  <div class="wrap">
+    <h2>Цены</h2>
+    <div class="price-list">
+      <div class="price-row"><span class="amount">2 000 ₽</span><span class="desc">Консультация</span></div>
+      <div class="price-row"><span class="amount">от 7 000 ₽</span><span class="desc">Анализ уголовного дела</span></div>
+      <div class="price-row"><span class="amount">от 5 000 ₽</span><span class="desc">Жалоба на действие/бездействие должностного лица</span></div>
+      <div class="price-row"><span class="amount">от 25 000 ₽</span><span class="desc">Представительство потерпевшего (следствие и суд)</span></div>
+      <div class="price-row"><span class="amount">от 7 000 ₽</span><span class="desc">Претензия (гражданские дела)</span></div>
+      <div class="price-row"><span class="amount">от 7 000 ₽</span><span class="desc">Исковое заявление (гражданские дела)</span></div>
+      <div class="price-row"><span class="amount">по запросу</span><span class="desc">Ведение гражданского дела в суде</span></div>
+    </div>
+    <div class="price-note">
+      Расходы на представителя по закону могут быть взысканы с виновной (проигравшей) стороны. Это означает, что итоговая стоимость моих услуг для вас может быть частично или полностью компенсирована по результатам дела.
+    </div>
+  </div>
+</section>
+
+<!-- ===== Почему обращаются ===== -->
+<section class="why">
+  <div class="wrap">
+    <h2>Почему обращаются ко мне</h2>
+    <ul>
+      <li>Изучал уголовные дела до суда и знаю слабые места обвинения</li>
+      <li>2000+ дел с итоговым решением за 22 года практики</li>
+      <li>Объясняю всё подробно, пока не станет понятно до конца</li>
+      <li>Опыт работы с государственными органами и процедурами изнутри</li>
+      <li>Гражданские дела — в связке с практикующим юристом</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== Контакты ===== -->
+<section id="contacts">
+  <div class="wrap">
+    <h2>Контакты</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <div class="label">Телефон</div>
+          <a href="tel:+79020244572">+7 902 024-45-72</a>
+        </div>
+        <div class="contact-item">
+          <div class="label">E-mail</div>
+          <a href="mailto:ArhandSem@yandex.ru">ArhandSem@yandex.ru</a>
+        </div>
+        <div class="contact-item">
+          <div class="label">Адрес</div>
+          <div class="value">г. Челябинск, проспект Героя России Родионова&nbsp;Е.Н., д.&nbsp;6</div>
+        </div>
+      </div>
+      <div>
+        <form onsubmit="sendForm(event)">
+          <input type="text" id="f-name" placeholder="Ваше имя" required>
+          <input type="tel" id="f-phone" placeholder="Телефон" required>
+          <textarea id="f-q" placeholder="Кратко опишите ваш вопрос"></textarea>
+          <button class="btn" type="submit">Записаться на консультацию</button>
+        </form>
+      </div>
+    </div>
+    <div class="map-box">
+      <iframe src="https://yandex.ru/map-widget/v1/?mode=search&text=%D0%A7%D0%B5%D0%BB%D1%8F%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%93%D0%B5%D1%80%D0%BE%D1%8F%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8%20%D0%A0%D0%BE%D0%B4%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%20%D0%95.%D0%9D.%2C%206" title="Карта: г. Челябинск, проспект Героя России Родионова Е.Н., д. 6" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>Юрист Семенов Павел Николаевич</div>
+    <div><span id="year"></span></div>
+    <div class="footer-links">
+      <a href="privacy.html">политика конфиденциальности</a><span>|</span><a href="personal-data.html">обработка персональных данных</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function closeMenu(){document.getElementById('menu').classList.remove('open')}
+  function sendForm(e){
+    e.preventDefault();
+    var name = document.getElementById('f-name').value.trim();
+    var phone = document.getElementById('f-phone').value.trim();
+    var q = document.getElementById('f-q').value.trim();
+    var body = encodeURIComponent('Имя: ' + name + '\r\nТелефон: ' + phone + (q ? '\r\n\r\nВопрос: ' + q : ''));
+    location.href = 'mailto:ArhandSem@yandex.ru?subject=' + encodeURIComponent('Запись на консультацию с сайта') + '&body=' + body;
+  }
+</script>
+
+</body>
+</html>
