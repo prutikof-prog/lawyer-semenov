@@ -8,6 +8,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://юрист-павел-семенов.рф/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Юрист Павел Семенов">
+<meta property="og:title" content="Юрист Павел Семенов – Челябинск | Уголовные и гражданские дела, споры с госорганами">
+<meta property="og:description" content="Павел Семенов – юрист, 22 года в прокуратуре Челябинской области, 10+ лет заместителем прокурора. Консультации по уголовным делам, представительство потерпевших, жалобы на госорганы, гражданские дела.">
+<meta property="og:image" content="https://юрист-павел-семенов.рф/photo-main.jpg">
+<meta property="og:url" content="https://юрист-павел-семенов.рф/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Юрист Павел Семенов – Челябинск">
+<meta name="twitter:description" content="22 года в прокуратуре Челябинской области. Консультации по уголовным и гражданским делам, спорам с госорганами.">
+<meta name="twitter:image" content="https://юрист-павел-семенов.рф/photo-main.jpg">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -21,21 +34,6 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/110848165" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <style>
-  :root{
-    --bg:#33332F;
-    --bg-soft:#3B3B36;
-    --bg-card:#3E3E38;
-    --brass-light:#D8C79A;
-    --brass:#C4A972;
-    --brass-deep:#A9895E;
-    --text:#EDEAE2;
-    --text-soft:#BDB9AE;
-    --line:rgba(216,199,154,.18);
-    --serif:'Lora',Georgia,serif;
-    --sans:'Inter',-apple-system,'Segoe UI',sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
   body{
     background:var(--bg);
     color:var(--text);
@@ -43,11 +41,6 @@
     font-weight:300;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
-  }
-  /* Тонкая латунная линия вверху страницы */
-  .top-accent{
-    height:3px;
-    background:linear-gradient(90deg,var(--brass-deep),var(--brass-light) 40%,var(--brass-deep) 90%);
   }
   .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
   h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.25}
@@ -57,19 +50,10 @@
     background:linear-gradient(90deg,var(--brass-light),var(--brass-deep));
   }
   section{padding:72px 0}
-  a{color:var(--brass-light);text-decoration:none}
   a:hover{color:var(--brass)}
 
   /* ===== Навигация ===== */
-  header{
-    position:sticky;top:0;z-index:100;
-    background:rgba(51,51,47,.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
   .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-family:var(--serif);font-size:19px;color:var(--text);letter-spacing:.02em}
-  .logo span{color:var(--brass-light)}
   nav ul{display:flex;gap:32px;list-style:none}
   nav a{color:var(--text-soft);font-size:15px;font-weight:400;transition:color .2s}
   nav a:hover{color:var(--brass-light)}
@@ -220,11 +204,7 @@
   }
   .map-box iframe{display:block;width:100%;height:380px;border:0;filter:grayscale(.25) contrast(.95)}
 
-  footer{border-top:1px solid var(--line);padding:32px 0;color:var(--text-soft);font-size:14px}
   .footer-inner{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
-  .footer-links a{color:var(--brass-deep)}
-  .footer-links a:hover{color:var(--brass-light)}
-  .footer-links span{color:var(--text-soft);margin:0 6px}
 
   /* ===== Адаптив ===== */
   @media(max-width:860px){
@@ -279,7 +259,7 @@
     <div>
       <div class="photo-frame">
         <!-- ФОТО: положите файл photo-main.jpg рядом с index.html – он подставится автоматически -->
-        <img src="photo-main.jpg" alt="Юрист Павел Семенов" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="photo-main.jpg" alt="Юрист Павел Семенов" width="760" height="1105" fetchpriority="high" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="photo-ph" style="display:none">
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
           Фото Павла Семенова<br>(файл photo-main.jpg)
@@ -332,12 +312,13 @@
     <!-- Доп. места под фото: положите photo-2.jpg / photo-3.jpg рядом с index.html -->
     <div class="about-photos">
       <div class="photo-frame">
-        <img src="photo-2.jpg" alt="Юрист Павел Семенов" onerror="this.closest('.photo-frame').style.display='none'">
+        <img src="photo-2.jpg" alt="Юрист Павел Семенов" width="760" height="1145" loading="lazy" onerror="this.closest('.photo-frame').style.display='none'">
       </div>
-      <!-- Доп. место: появится автоматически, когда рядом положат файл photo-3.jpg -->
+      <!-- Доп. место: чтобы добавить третье фото, раскомментируйте блок ниже и положите файл photo-3.jpg рядом с index.html
       <div class="photo-frame">
         <img src="photo-3.jpg" alt="Юрист Павел Семенов" onerror="this.closest('.photo-frame').style.display='none'">
       </div>
+      -->
     </div>
   </div>
 </section>
@@ -427,6 +408,10 @@
         <div class="contact-item">
           <div class="label">E-mail</div>
           <a href="mailto:ArhandSem@yandex.ru">ArhandSem@yandex.ru</a>
+        </div>
+        <div class="contact-item">
+          <div class="label">Telegram</div>
+          <a href="https://t.me/Pavel7Semenov" target="_blank" rel="noopener">@Pavel7Semenov</a>
         </div>
         <div class="contact-item">
           <div class="label">Адрес</div>
