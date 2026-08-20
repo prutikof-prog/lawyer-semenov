@@ -47,11 +47,11 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--text-soft);fo
 .head-actions{display:flex;align-items:center;gap:16px;margin-left:auto;margin-right:22px}
 .head-phone{font-family:var(--sans);font-size:15px;color:var(--text);white-space:nowrap;transition:color .2s}
 .head-phone:hover{color:var(--brass-light)}
-.tg-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;
+.tg-btn,.max-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;
   background:linear-gradient(135deg,var(--brass-light),var(--brass-deep));color:#2B2B27;
   font-family:var(--sans);font-size:14px;font-weight:500;transition:transform .2s,box-shadow .2s}
-.tg-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.28);color:#2B2B27}
-.tg-btn svg{width:16px;height:16px;fill:currentColor;flex:none}
+.tg-btn:hover,.max-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.28);color:#2B2B27}
+.tg-btn svg,.max-btn svg{width:16px;height:16px;fill:currentColor;flex:none}
 
 /* ==== кнопка Telegram в тексте ==== */
 .btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
@@ -66,7 +66,8 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--text-soft);fo
 .float-contact a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
   box-shadow:0 6px 20px rgba(0,0,0,.38);transition:transform .2s}
 .float-contact a:hover{transform:scale(1.08)}
-.float-tg{background:linear-gradient(135deg,var(--brass-light),var(--brass-deep));color:#2B2B27}
+.float-max{background:linear-gradient(135deg,var(--brass-light),var(--brass-deep));color:#2B2B27}
+.float-tg{background:var(--bg-card);border:1px solid var(--line);color:var(--brass-light)}
 .float-tel{background:var(--bg-card);border:1px solid var(--line);color:var(--brass-light)}
 .float-contact svg{width:25px;height:25px;fill:currentColor}
 
@@ -79,8 +80,8 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--text-soft);fo
 @media(max-width:860px){
   .head-phone{display:none}
   .head-actions{margin-right:14px;gap:10px}
-  .tg-btn .tg-label{display:none}
-  .tg-btn{padding:9px 11px}
+  .tg-btn .tg-label,.max-btn .tg-label{display:none}
+  .tg-btn,.max-btn{padding:9px 11px}
   .float-contact{right:14px;bottom:14px;gap:10px}
   .float-contact a{width:48px;height:48px}
   .float-contact svg{width:22px;height:22px}
