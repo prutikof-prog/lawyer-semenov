@@ -9,6 +9,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-120.png" type="image/png" sizes="120x120">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
 <link rel="canonical" href="https://юрист-павел-семенов.рф/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
@@ -232,7 +237,11 @@
 
 <header>
   <div class="wrap nav">
-    <div class="logo">Юрист – Павел <span>Семенов</span></div>
+    <a class="logo" href="index.html" style="color:var(--text)"><span class="lname">Юрист Павел <span>Семенов</span></span><span class="city">Челябинск</span></a>
+    <div class="head-actions">
+      <a class="head-phone" href="tel:+79020244572">+7 902 024-45-72</a>
+      <a class="tg-btn" href="https://t.me/Pavel7Semenov" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg><span class="tg-label">Telegram</span></a>
+    </div>
     <nav>
       <button class="burger" aria-label="Меню" onclick="document.getElementById('menu').classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -254,7 +263,10 @@
     <div>
       <h1>Когда государство говорит с&nbsp;вами на&nbsp;непонятном языке&nbsp;– нужен тот, кто <em>объяснит и&nbsp;защитит</em></h1>
       <p class="sub">22 года в прокуратуре Челябинской области. Теперь на вашей стороне: <strong style="font-weight:600;color:var(--text)">перевожу с юридического на человеческий</strong>, беру дело на себя и довожу до результата.</p>
-      <a class="btn" href="#contacts">Получить консультацию</a>
+      <div class="btn-row">
+        <a class="btn" href="#contacts">Получить консультацию</a>
+        <a class="btn-tg" href="https://t.me/Pavel7Semenov" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>Написать в Telegram</a>
+      </div>
     </div>
     <div>
       <div class="photo-frame">
@@ -419,11 +431,20 @@
         </div>
       </div>
       <div>
-        <form onsubmit="sendForm(event)">
-          <input type="text" id="f-name" placeholder="Ваше имя" required>
-          <input type="tel" id="f-phone" placeholder="Телефон" required>
-          <textarea id="f-q" placeholder="Кратко опишите ваш вопрос"></textarea>
-          <button class="btn" type="submit">Записаться на консультацию</button>
+        <div class="btn-row" style="margin-bottom:20px">
+          <a class="btn" href="tel:+79020244572">Позвонить</a>
+          <a class="btn-tg" href="https://t.me/Pavel7Semenov" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>Написать в Telegram</a>
+        </div>
+        <form id="lead-form" onsubmit="sendForm(event)">
+          <input type="hidden" name="access_key" value="257a3a60-2cca-4b23-a17d-50a4df87edbf">
+          <input type="hidden" name="subject" value="Заявка с сайта юрист-павел-семенов.рф">
+          <input type="hidden" name="from_name" value="Сайт юриста Семенова">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="text" name="Имя" id="f-name" placeholder="Ваше имя" required>
+          <input type="tel" name="Телефон" id="f-phone" placeholder="Телефон" required>
+          <textarea name="Вопрос" id="f-q" placeholder="Кратко опишите ваш вопрос"></textarea>
+          <button class="btn" type="submit" id="f-submit">Записаться на консультацию</button>
+          <p class="form-msg" id="f-msg"></p>
         </form>
       </div>
     </div>
@@ -448,13 +469,36 @@
   function closeMenu(){document.getElementById('menu').classList.remove('open')}
   function sendForm(e){
     e.preventDefault();
-    var name = document.getElementById('f-name').value.trim();
-    var phone = document.getElementById('f-phone').value.trim();
-    var q = document.getElementById('f-q').value.trim();
-    var body = encodeURIComponent('Имя: ' + name + '\r\nТелефон: ' + phone + (q ? '\r\n\r\nВопрос: ' + q : ''));
-    location.href = 'mailto:ArhandSem@yandex.ru?subject=' + encodeURIComponent('Запись на консультацию с сайта') + '&body=' + body;
+    var form = e.target,
+        btn  = document.getElementById('f-submit'),
+        msg  = document.getElementById('f-msg');
+    msg.className = 'form-msg';
+    msg.textContent = 'Отправляю...';
+    btn.disabled = true;
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Accept': 'application/json'},
+      body: new FormData(form)
+    }).then(function(r){ return r.json(); }).then(function(d){
+      if (d.success) {
+        msg.className = 'form-msg ok';
+        msg.textContent = 'Заявка отправлена. Свяжусь с вами в ближайшее рабочее время.';
+        form.reset();
+      } else {
+        msg.className = 'form-msg err';
+        msg.textContent = 'Не удалось отправить. Напишите в Telegram или позвоните по телефону.';
+      }
+    }).catch(function(){
+      msg.className = 'form-msg err';
+      msg.textContent = 'Не удалось отправить. Напишите в Telegram или позвоните по телефону.';
+    }).then(function(){ btn.disabled = false; });
   }
 </script>
 
+
+<div class="float-contact">
+  <a class="float-tg" href="https://t.me/Pavel7Semenov" target="_blank" rel="noopener" aria-label="Написать в Telegram" title="Написать в Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
+  <a class="float-tel" href="tel:+79020244572" aria-label="Позвонить" title="Позвонить"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
+</div>
 </body>
 </html>

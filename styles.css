@@ -36,3 +36,52 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--text-soft);fo
 .footer-links a{color:var(--brass-deep)}
 .footer-links a:hover{color:var(--brass-light)}
 .footer-links span{color:var(--text-soft);margin:0 6px}
+
+
+/* ==== шапка: город, телефон, кнопка Telegram ==== */
+.logo{display:inline-flex;flex-direction:column;line-height:1.2;flex:none}
+.logo .lname{white-space:nowrap;color:var(--text)}
+.logo .lname span{color:var(--brass-light)}
+.logo .city{font-family:var(--sans);font-size:11.5px;font-weight:400;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass-deep);margin-top:3px}
+.head-actions{display:flex;align-items:center;gap:16px;margin-left:auto;margin-right:22px}
+.head-phone{font-family:var(--sans);font-size:15px;color:var(--text);white-space:nowrap;transition:color .2s}
+.head-phone:hover{color:var(--brass-light)}
+.tg-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;
+  background:linear-gradient(135deg,var(--brass-light),var(--brass-deep));color:#2B2B27;
+  font-family:var(--sans);font-size:14px;font-weight:500;transition:transform .2s,box-shadow .2s}
+.tg-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.28);color:#2B2B27}
+.tg-btn svg{width:16px;height:16px;fill:currentColor;flex:none}
+
+/* ==== кнопка Telegram в тексте ==== */
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn-tg{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:10px;
+  border:1px solid var(--brass-deep);color:var(--brass-light);font-family:var(--sans);
+  font-size:15px;font-weight:500;transition:background .2s,transform .2s}
+.btn-tg:hover{background:rgba(216,199,154,.10);transform:translateY(-2px);color:var(--brass-light)}
+.btn-tg svg{width:18px;height:18px;fill:currentColor;flex:none}
+
+/* ==== плавающие кнопки связи ==== */
+.float-contact{position:fixed;right:20px;bottom:20px;z-index:200;display:flex;flex-direction:column;gap:12px}
+.float-contact a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.38);transition:transform .2s}
+.float-contact a:hover{transform:scale(1.08)}
+.float-tg{background:linear-gradient(135deg,var(--brass-light),var(--brass-deep));color:#2B2B27}
+.float-tel{background:var(--bg-card);border:1px solid var(--line);color:var(--brass-light)}
+.float-contact svg{width:25px;height:25px;fill:currentColor}
+
+/* ==== форма заявки ==== */
+.hp{position:absolute !important;left:-9999px !important;opacity:0 !important}
+.form-msg{margin-top:14px;font-size:14.5px;min-height:21px;font-family:var(--sans)}
+.form-msg.ok{color:var(--brass-light)}
+.form-msg.err{color:#E39485}
+
+@media(max-width:860px){
+  .head-phone{display:none}
+  .head-actions{margin-right:14px;gap:10px}
+  .tg-btn .tg-label{display:none}
+  .tg-btn{padding:9px 11px}
+  .float-contact{right:14px;bottom:14px;gap:10px}
+  .float-contact a{width:48px;height:48px}
+  .float-contact svg{width:22px;height:22px}
+}
