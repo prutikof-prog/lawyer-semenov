@@ -77,6 +77,14 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--text-soft);fo
 .form-msg.ok{color:var(--brass-light)}
 .form-msg.err{color:#E39485}
 
+/* ==== согласие на обработку персональных данных ==== */
+.consent{display:flex;align-items:flex-start;gap:11px;margin:-4px 0 2px;cursor:pointer;
+  font-family:var(--sans);font-size:13.5px;line-height:1.55;color:var(--text-soft)}
+.consent input[type=checkbox]{width:18px;height:18px;flex:none;margin:1px 0 0;padding:0;
+  accent-color:var(--brass);cursor:pointer}
+.consent a{color:var(--brass-deep);text-decoration:underline;text-underline-offset:2px}
+.consent a:hover{color:var(--brass-light)}
+
 @media(max-width:860px){
   .head-phone{display:none}
   .head-actions{margin-right:14px;gap:10px}
@@ -85,4 +93,13 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--text-soft);fo
   .float-contact{right:14px;bottom:14px;gap:10px}
   .float-contact a{width:48px;height:48px}
   .float-contact svg{width:22px;height:22px}
+}
+
+@media(max-width:520px){
+  header .wrap{padding:0 14px}
+  .logo{font-size:15px}
+  .logo .city{font-size:10px;letter-spacing:.12em}
+  .head-actions{gap:7px;margin-right:8px}
+  .tg-btn,.max-btn{padding:8px 9px}
+  .tg-btn svg,.max-btn svg{width:15px;height:15px}
 }
