@@ -71,19 +71,13 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--text-soft);fo
 .float-tel{background:var(--bg-card);border:1px solid var(--line);color:var(--brass-light)}
 .float-contact svg{width:25px;height:25px;fill:currentColor}
 
-/* ==== форма заявки ==== */
-.hp{position:absolute !important;left:-9999px !important;opacity:0 !important}
-.form-msg{margin-top:14px;font-size:14.5px;min-height:21px;font-family:var(--sans)}
-.form-msg.ok{color:var(--brass-light)}
-.form-msg.err{color:#E39485}
-
-/* ==== согласие на обработку персональных данных ==== */
-.consent{display:flex;align-items:flex-start;gap:11px;margin:-4px 0 2px;cursor:pointer;
-  font-family:var(--sans);font-size:13.5px;line-height:1.55;color:var(--text-soft)}
-.consent input[type=checkbox]{width:18px;height:18px;flex:none;margin:1px 0 0;padding:0;
-  accent-color:var(--brass);cursor:pointer}
-.consent a{color:var(--brass-deep);text-decoration:underline;text-underline-offset:2px}
-.consent a:hover{color:var(--brass-light)}
+/* ==== форма заявки: встроенная Яндекс.Форма ==== */
+.form-frame{background:#F2F0EA;padding:10px;border-radius:8px;
+  border:1px solid rgba(216,199,154,.45);box-shadow:0 10px 34px rgba(0,0,0,.34)}
+.form-frame iframe{display:block;width:100%;border:0;border-radius:4px}
+.form-note{margin-top:14px;font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--text-soft)}
+.form-note a{color:var(--brass-deep);text-decoration:underline;text-underline-offset:2px}
+.form-note a:hover{color:var(--brass-light)}
 
 @media(max-width:860px){
   .head-phone{display:none}

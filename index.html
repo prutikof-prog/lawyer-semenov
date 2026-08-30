@@ -26,18 +26,8 @@
 <meta name="twitter:title" content="Юрист Павел Семенов – Челябинск">
 <meta name="twitter:description" content="22 года в прокуратуре Челябинской области. Консультации по уголовным и гражданским делам, спорам с госорганами.">
 <meta name="twitter:image" content="https://юрист-павел-семенов.рф/photo-main.jpg">
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110848165', 'ym');
-    ym(110848165, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110848165" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+<!-- Яндекс.Метрика подключается из cookie-consent.js только после согласия посетителя -->
+<script src="cookie-consent.js" defer></script>
 <style>
   body{
     background:var(--bg);
@@ -442,21 +432,13 @@
           <a class="btn" href="tel:+79020244572">Позвонить</a>
           <a class="btn-tg" href="https://max.ru/u/f9LHodD0cOLCCrY9_pj_1xniiiDjCTFWXwpTUWF1RJoM0THyfDcjr5k86PM" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c-5.08 0-9.2 3.44-9.2 7.68 0 2.42 1.34 4.58 3.44 5.98-.16 1-.62 2.34-1.54 3.4-.22.26.02.66.36.56 1.94-.52 3.48-1.44 4.4-2.16.8.16 1.64.26 2.54.26 5.08 0 9.2-3.44 9.2-7.68S17.08 3.2 12 3.2z"/></svg>Написать в MAX</a>
         </div>
-        <form id="lead-form" onsubmit="sendForm(event)">
-          <input type="hidden" name="access_key" value="257a3a60-2cca-4b23-a17d-50a4df87edbf">
-          <input type="hidden" name="subject" value="Заявка с сайта юрист-павел-семенов.рф">
-          <input type="hidden" name="from_name" value="Сайт юриста Семенова">
-          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="text" name="Имя" id="f-name" placeholder="Ваше имя" required>
-          <input type="tel" name="Телефон" id="f-phone" placeholder="Телефон" required>
-          <textarea name="Вопрос" id="f-q" placeholder="Кратко опишите ваш вопрос"></textarea>
-          <label class="consent" for="f-consent">
-            <input type="checkbox" id="f-consent" name="Согласие" value="Да, согласие получено" required>
-            <span>Я согласен на <a href="personal-data.html" target="_blank" rel="noopener">обработку персональных данных</a> и ознакомлен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span>
-          </label>
-          <button class="btn" type="submit" id="f-submit">Записаться на консультацию</button>
-          <p class="form-msg" id="f-msg"></p>
-        </form>
+        <div class="form-frame">
+          <iframe src="https://forms.yandex.ru/cloud/6a93f5eb493639a7a4aa613c/?iframe=1"
+                  name="ya-form-6a93f5eb493639a7a4aa613c"
+                  title="Форма записи на консультацию"
+                  frameborder="0" width="100%" height="620" loading="lazy"></iframe>
+        </div>
+        <p class="form-note">Отправляя форму, вы даёте согласие на <a href="personal-data.html">обработку персональных данных</a> и подтверждаете, что ознакомлены с <a href="privacy.html">политикой конфиденциальности</a>.</p>
       </div>
     </div>
     <div class="map-box">
@@ -470,7 +452,7 @@
     <div>Юрист Семенов Павел Николаевич</div>
     <div><span id="year"></span></div>
     <div class="footer-links">
-      <a href="privacy.html">политика конфиденциальности</a><span>|</span><a href="personal-data.html">обработка персональных данных</a>
+      <a href="privacy.html">политика конфиденциальности</a><span>|</span><a href="personal-data.html">обработка персональных данных</a><span>|</span><a href="cookies.html">файлы cookie</a>
     </div>
   </div>
 </footer>
@@ -478,32 +460,6 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   function closeMenu(){document.getElementById('menu').classList.remove('open')}
-  function sendForm(e){
-    e.preventDefault();
-    var form = e.target,
-        btn  = document.getElementById('f-submit'),
-        msg  = document.getElementById('f-msg');
-    msg.className = 'form-msg';
-    msg.textContent = 'Отправляю...';
-    btn.disabled = true;
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {'Accept': 'application/json'},
-      body: new FormData(form)
-    }).then(function(r){ return r.json(); }).then(function(d){
-      if (d.success) {
-        msg.className = 'form-msg ok';
-        msg.textContent = 'Заявка отправлена. Свяжусь с вами в ближайшее рабочее время.';
-        form.reset();
-      } else {
-        msg.className = 'form-msg err';
-        msg.textContent = 'Не удалось отправить. Напишите в Telegram или позвоните по телефону.';
-      }
-    }).catch(function(){
-      msg.className = 'form-msg err';
-      msg.textContent = 'Не удалось отправить. Напишите в Telegram или позвоните по телефону.';
-    }).then(function(){ btn.disabled = false; });
-  }
 </script>
 
 
@@ -512,5 +468,6 @@
   <a class="float-tg" href="https://t.me/Pavel7Semenov" target="_blank" rel="noopener" aria-label="Написать в Telegram" title="Написать в Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
   <a class="float-tel" href="tel:+79020244572" aria-label="Позвонить" title="Позвонить"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
 </div>
+<script src="https://forms.yandex.ru/_static/embed.js" defer></script>
 </body>
 </html>

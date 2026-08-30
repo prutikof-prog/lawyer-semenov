@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /personal-data.html
-Disallow: /privacy.html
 
 Sitemap: https://юрист-павел-семенов.рф/sitemap.xml
