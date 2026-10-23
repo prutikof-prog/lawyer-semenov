@@ -28,6 +28,7 @@
   }
 
   function loadMetrika() {
+    if (location.protocol === 'file:' || ['localhost','127.0.0.1','::1'].indexOf(location.hostname) !== -1) return;
     if (window.ym && window.ym.l) return;
     var src = 'https://mc.yandex.ru/metrika/tag.js?id=' + COUNTER;
     (function (m, e, t, r, i, k, a) {
